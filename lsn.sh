@@ -32,4 +32,4 @@ end=$(mysql -e 'SHOW ENGINE INNODB STATUS\G' | grep sequence | awk '{print $4}')
 perMin=$(echo "scale=10;(($end-$start)/1024/1024)/($sleepTime/60)" | bc)
 
 # Display the value
-echo "MB_per_min $perMin"
+echo "$perMin MB_per_min"
